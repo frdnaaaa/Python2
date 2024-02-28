@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>Birthday Card</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <p class="style2">Send an e-card to wish your beloved a happy birthday!</p>
+    <div class="container">
+        <p class="style">Name: <input type="text" name="name" id="name"><br></p>
+        <p class="style">P.num: <input type="tel" name="phone" id="number"><img src="whatsapp.jpg" width="50" id="img2"
+                onclick="send()"></p>
+    </div>
+    <script>
+        function send() {
+        var phoneNumber = document.getElementById("number").value;
+        var name = document.getElementById("name").value;
+        var sendlink = "https://frdnaaaa.github.io/Assignment/A1.html"; 
+        var message = "Sending you my warmest wishes this year for your birthday. \nFrom: ";
+        var encodedURL = encodeURIComponent(sendlink);
+        var whatsappLink = "https://api.whatsapp.com/send?phone=" + phoneNumber + "&text=" + encodeURIComponent(message + " " + name + " " + sendlink);
+        window.location.href = whatsappLink;
+}
+    </script>
+</body>
+</html>
